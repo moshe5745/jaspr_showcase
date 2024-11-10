@@ -1,4 +1,6 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr/server.dart';
+import 'package:sqlite3/sqlite3.dart';
 
 // By using the @client annotation this component will be automatically compiled to javascript and mounted
 // on the client. Therefore:
@@ -11,6 +13,12 @@ class About extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
+    var Database = sqlite3.open("sqlite.db");
+    var query = Database.select("SELECT * FROM AddressBook");
+
+    // Renders the component after the data has loaded.
+    yield text(query.toString());
+
     yield section([
       ol([
         li([

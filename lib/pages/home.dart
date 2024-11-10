@@ -14,9 +14,14 @@ class Home extends StatefulComponent {
 }
 
 class HomeState extends State<Home> {
+  @sync
+  bool isLoading = true;
+
   @override
   void initState() {
     super.initState();
+    Future.delayed(Duration(seconds: 1), () => setState(() => isLoading = false));
+
     // Run code depending on the rendering environment.
     if (kIsWeb) {
       print("Hello client");
@@ -31,6 +36,7 @@ class HomeState extends State<Home> {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield section([
+      text(isLoading.toString()),
       img(src: 'images/logo.png', width: 80),
     ]);
   }

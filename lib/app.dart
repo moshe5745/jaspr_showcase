@@ -1,11 +1,12 @@
+import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
+import 'package:jaspr_showcase/components/loader.dart';
 import 'package:jaspr_showcase/components/navbar.dart';
 import 'package:jaspr_showcase/components/svg_icon.dart';
 import 'package:jaspr_showcase/constants/icons.dart';
-import 'package:jaspr/jaspr.dart';
-import 'package:jaspr_router/jaspr_router.dart';
+import 'package:jaspr_showcase/pages/home.dart';
 
 import 'pages/about.dart';
-import 'pages/home.dart';
 
 // The main component of your application.
 //
